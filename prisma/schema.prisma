@@ -1,0 +1,146 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  name            String?
+  username        String    @unique
+  bio             String?
+  email           String    @unique
+  emailVerified   DateTime?
+  image           String?
+  coverImage      String?
+  profileImage    String?
+  hashedPassword  String
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  hasNotification Boolean?
+  userStatus      Int
+
+  posts         Post[]
+  contributed   Contributor[]
+  notifications Notification[]
+  upvotes       UpVote[]
+  downvotes     DownVote[]
+  comments      Comment[]
+  userBadge     UserBadge[]
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  body      String
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Post {
+  id          Int           @id @default(autoincrement())
+  author      Int
+  body        String
+  location    String?
+  geoLocation String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  sumUpVote   Int?          @default(0)
+  sumDownVote Int?          @default(0)
+  sumComment  Int?          @default(0)
+  media       Media[]
+  upvotes     UpVote[]
+  downvotes   DownVote[]
+  comments    Comment[]
+  contributor Contributor[]
+  postStatus  Int
+  user        User          @relation(fields: [author], references: [id])
+}
+
+model Contributor {
+  id                Int      @id @default(autoincrement())
+  userId            Int
+  postId            Int
+  contributorStatus Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User     @relation(fields: [userId], references: [id])
+  post              Post     @relation(fields: [postId], references: [id])
+}
+
+model Media {
+  id        Int      @id @default(autoincrement())
+  type      String
+  content   String
+  createdAt DateTime @default(now())
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id])
+}
+
+model UpVote {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  postId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+}
+
+model DownVote {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  postId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+}
+
+model Comment {
+  id            Int            @id @default(autoincrement())
+  body          String
+  userId        Int
+  postId        Int
+  createdAt     DateTime       @default(now())
+  parentId      Int?
+  media         MediaComment[]
+  edited        Boolean        @default(false)
+  commentStatus Int
+  parent        Comment?       @relation("parent", fields: [parentId], references: [id])
+  child         Comment[]      @relation("parent")
+  user          User           @relation(fields: [userId], references: [id])
+  post          Post           @relation(fields: [postId], references: [id])
+}
+
+model MediaComment {
+  id        Int      @id @default(autoincrement())
+  type      String
+  content   String
+  createdAt DateTime @default(now())
+  commentId Int
+  comment   Comment  @relation(fields: [commentId], references: [id])
+}
+
+model Badge {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String
+  value       Int
+  image       String
+  userBadge   UserBadge[]
+}
+
+model UserBadge {
+  id        Int      @id @default(autoincrement())
+  badgeId   Int
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  badge     Badge    @relation(fields: [badgeId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
