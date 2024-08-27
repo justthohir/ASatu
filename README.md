@@ -139,3 +139,15 @@ To accept contribution
 - create api route
 - api just functionally, not yet modified with system needs
 - authentication not yet tested
+
+### 26-08-2024
+
+- base responsive layout
+- side nav
+- bottom nav (for mobile)
+- add package @svgr/webpack
+
+
+## Credit
+
+- Vectors and icons by Solar Icons in CC Attribution License via <a href="https://www.svgrepo.com/author/Solar%20Icons/" target="_blank">SVG Repo</a>
