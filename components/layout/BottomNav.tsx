@@ -9,8 +9,8 @@ type Props = {}
 
 const BottomNav = (props: Props) => {
 	return (
-		<nav className="bg_default border_color_default fixed bottom-0 hidden w-full border-t border-solid max-[823px]:block">
-			<div className="flex h-[60px] items-center justify-around">
+		<div className="bottom_nav_cont fixed bottom-0 hidden w-full border-t border-solid border-light-border bg-white max-[823px]:block">
+			<nav className="flex h-[60px] items-center justify-around">
 				<div>
 					<HomeBold width="24px" height="24px" />
 				</div>
@@ -18,7 +18,13 @@ const BottomNav = (props: Props) => {
 					<SearchO width="24px" height="24px" />
 				</div>
 				<div className="flex justify-center ">
-					<Image src={Nginfo} width="52" height="52" alt="Nginfo" />
+					<Image
+						src={Nginfo}
+						width="52"
+						height="52"
+						alt="Nginfo Button"
+						quality={100}
+					/>
 				</div>
 				<div>
 					<NotifO width="24px" height="24px" />
@@ -26,8 +32,8 @@ const BottomNav = (props: Props) => {
 				<div>
 					<LetterO width="24px" height="24px" />
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
 	)
 }
 

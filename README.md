@@ -140,12 +140,17 @@ To accept contribution
 - api just functionally, not yet modified with system needs
 - authentication not yet tested
 
-### 26-08-2024
+### 27-08-2024
 
 - base responsive layout
 - side nav
 - bottom nav (for mobile)
 - add package @svgr/webpack
+
+### 01-09-2024
+
+- Detail Post Layout
+- add package @tailwindcss/line-clamp
 
 
 ## Credit
