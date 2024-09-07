@@ -37,7 +37,7 @@ const SideNav = (props: Props) => {
 						<div>
 							<LetterO width="24px" height="24px" />
 						</div>
-						<div className="relative mb-[-10px] inline-block">
+						<div className="group relative mb-[-10px] inline-block">
 							<button type="button">
 								<Image
 									src={Nginfo}
@@ -47,7 +47,7 @@ const SideNav = (props: Props) => {
 									quality={100}
 								/>
 							</button>
-							<p className="absolute left-[70px] top-2 flex h-[34px] w-[62px] items-center justify-center rounded-lg bg-primary-base p-4 text-white">
+							<p className="absolute left-[70px] top-2 hidden h-[34px] w-[62px] items-center justify-center rounded-lg bg-primary-base p-4 text-white min-[1440px]:group-hover:flex">
 								<span className="text-xs font-semibold">Nginfo</span>
 
 								<svg

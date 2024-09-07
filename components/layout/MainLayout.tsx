@@ -23,6 +23,7 @@ import RoundSeparator from "@components/utils/RoundSeparator"
 import NewBadge from "@components/utils/NewBadge"
 import IconNText from "@components/utils/IconNText"
 import RoundImage from "@components/utils/RoundImage"
+import ContentPost from "./ContentPost"
 
 type Props = {}
 
@@ -44,161 +45,40 @@ const MainLayout = (props: Props) => {
 
 						<div className="main_content_cont flex min-h-screen w-full px-6 py-6 min-[760px]:px-[98px]">
 							<div className="h-full w-full">
-								<div className="content_post_cont mb-6 border-b border-solid border-light-border">
-									<HeaderContent
-										src={User1}
-										height={36}
-										width={36}
-										heightCont={38}
-										name="Giulio Sudjatmiko"
-										userName="@gegedjatmiko"
-										sizeName="text-sm"
-										sizeUserName="text-xs"
-									/>
+								<ContentPost
+									srcProfile={Profile}
+									name="Giulio Sudjatmiko"
+									userName="@gegedjatmiko"
+									postText="Info! info! macet total gaes, uda kejebak setengah jam
+										disini, gak jalan sama sekali dari tadi. Ini aku lagi di
+										perempatan besar jemursari arah ke rungkut industri,
+										info dong yang lagi disekitar sini, macet kenapa nih?"
+									countReply={2}
+								/>
 
-									<div className="post_main_cont mb-[14px] w-full rounded-2xl bg-[#F4F6F9] p-5">
-										<div className="mb-6 max-h-32 w-full overflow-hidden">
-											<p className="line-clamp-6 text-[13px] font-normal">
-												Info! info! macet total gaes, uda kejebak setengah jam
-												disini, gak jalan sama sekali dari tadi. Ini aku lagi di
-												perempatan besar jemursari arah ke rungkut industri,
-												info dong yang lagi disekitar sini, macet kenapa nih?
-											</p>
-										</div>
-										<div className="mb-6 flex max-h-[172px] w-full justify-between space-x-1">
-											<div className="post_img_cont flex shrink grow items-center justify-center">
-												<Image
-													src={Traffic1}
-													alt="Post Info Image"
-													className="w-full rounded-2xl object-cover"
-												/>
-											</div>
-											<div className="post_img_cont flex shrink grow items-center justify-center">
-												<Image
-													src={Traffic2}
-													alt="Post Info Image"
-													className="w-full rounded-2xl object-cover"
-												/>
-											</div>
-											<div className="post_img_cont relative flex shrink grow items-center justify-center">
-												<Image
-													src={Traffic3}
-													alt="Post Info Image"
-													className="w-full rounded-2xl object-cover"
-												/>
-												<div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-primary-base bg-opacity-40">
-													<span className="text-[28px] font-medium text-white">
-														+3
-													</span>
-												</div>
-											</div>
-										</div>
-										<div className="flex w-full items-center justify-start space-x-2 text-primary-base">
-											<span className="flex h-5 items-center">
-												<span>
-													<MapO width={18} height={18} />
-												</span>
-												<span className="ml-2 flex overflow-hidden text-xs font-normal">
-													<div className="max-w-60 truncate max-[759px]:max-w-[60px]">
-														<span>Jl.Jemursari</span>
-													</div>
-													<span>, SBY</span>
-												</span>
-											</span>
-											<span className="flex h-5 items-center">
-												<RoundSeparator />
-											</span>
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal">01/09/2024</span>
-											</span>
-											<span className="flex h-5 items-center">
-												<RoundSeparator />
-											</span>
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal text-[#6B7385]">
-													16:20 WIB
-												</span>
-											</span>
-											<span className="flex h-5 items-center">
-												<RoundSeparator />
-											</span>
-											<span className="flex h-5 items-center">
-												<NewBadge />
-											</span>
-										</div>
-									</div>
+								<ContentPost
+									isComment={true}
+									srcProfile={User2}
+									name="Jane Darsonoe"
+									userName="@janedoe"
+									postText="asli parah ini muacet total!!!, aku uda kejebak 1 jam,
+										posisiku di depan pabrik sampoerna."
+									countReply={1}
+								/>
 
-									<div className="post_footer_cont mb-6 w-full">
-										<div className="flex max-h-[18px] w-full items-center justify-between">
-											<IconNText
-												sizeCont={18}
-												icon={<ReplyO width={18} height={18} />}
-												text="Reply"
-												count={8}
-												textColor="text-primary-base"
-											/>
-											<IconNText
-												sizeCont={18}
-												icon={<ReInfo width={18} height={18} />}
-												text="Re-Info"
-												count={15}
-												textColor="text-primary-base"
-											/>
-											<IconNText
-												sizeCont={18}
-												icon={<Upvote width={18} height={18} />}
-												text="Upvoted"
-												count={35}
-												textColor="text-upvote-base"
-											/>
-											<IconNText
-												sizeCont={18}
-												icon={<Downvote width={18} height={18} />}
-												text="Downvote"
-												count={3}
-												textColor="text-primary-base"
-											/>
-										</div>
-									</div>
+								<ContentPost
+									isComment={true}
+									srcProfile={User3}
+									name="Levi Luciana Fahreza"
+									userName="@lelufahreza"
+									postText="Waduh macet total ya, ada jalan alternatif lain yg deket
+										kah? aku biasanya ke rungkut lewat jemursari soalnya."
+									countReply={0}
+								/>
 
-									<div className="post_comment_cont mb-6 flex w-full items-center justify-start space-x-[10px]">
-										<div className="flex h-11 w-[36px] items-center">
-											<RoundImage
-												src={Profile}
-												height={36}
-												width={36}
-												alt="User Photo"
-												quality={100}
-											/>
-										</div>
-
-										<div className="relative h-11 w-[236px] min-[760px]:w-[422px]">
-											<input
-												type="text"
-												className="block w-full rounded-lg border border-light-border p-2.5 pe-10 text-sm font-normal text-gray-base focus:border-light-border focus:outline-none focus:ring-0"
-												placeholder="Info your comments"
-											/>
-											<div className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3.5">
-												<AttachmentO width={16} height={16} />
-											</div>
-										</div>
-
-										<div className="flex h-11 w-[82px] items-center">
-											<Image
-												src={SendBtn}
-												width={82}
-												alt="Send Button"
-												quality={100}
-												priority={true}
-											/>
-										</div>
-									</div>
-								</div>
-
-								<div className="content_reply_cont mb-6 border-b border-solid border-light-border">
+								{/* <div className="content_reply_cont mb-6 border-b border-solid border-light-border">
 									<HeaderContent
 										src={User2}
-										height={28}
 										width={28}
 										heightCont={32}
 										name="Jane Darsonoe"
@@ -242,12 +122,11 @@ const MainLayout = (props: Props) => {
 											/>
 										</div>
 									</div>
-								</div>
+								</div> */}
 
-								<div className="content_reply_cont border-b border-solid border-light-border">
+								{/* <div className="content_reply_cont border-b border-solid border-light-border">
 									<HeaderContent
 										src={User3}
-										height={28}
 										width={28}
 										heightCont={32}
 										name="Levi Luciana Fahreza"
@@ -291,7 +170,7 @@ const MainLayout = (props: Props) => {
 											/>
 										</div>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

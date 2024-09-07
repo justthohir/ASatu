@@ -4,7 +4,6 @@ import DotMenu from "@public/assets/icons/dot-menu-.svg"
 
 type Props = {
 	src: StaticImport
-	height: number
 	width: number
 	heightCont: number
 	name: string
@@ -21,7 +20,7 @@ const HeaderContent = (props: Props) => {
 			>
 				<RoundImage
 					src={props.src}
-					height={props.height}
+					height={props.width}
 					width={props.width}
 					alt="User Photo"
 					quality={100}

@@ -152,6 +152,9 @@ To accept contribution
 - Detail Post Layout
 - add package @tailwindcss/line-clamp
 
+### 07-09-2024
+
+- breaking down to smaller components
 
 ## Credit
 

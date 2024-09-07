@@ -9,14 +9,14 @@ type Props = {
 	isComment?: boolean
 }
 
-const IconNText = (props: Props) => {
+const IconNText = ({ isComment = false, ...props }: Props) => {
 	return (
 		<div className="flex items-center justify-start space-x-[6px]">
 			<div className={`h-[${props.sizeCont}px] w-[${props.sizeCont}px]`}>
 				{props.icon}
 			</div>
 			<div className={`flex items-center text-xs font-bold ${props.textColor}`}>
-				{props.isComment ? (
+				{isComment ? (
 					<span>{props.text}&nbsp;</span>
 				) : (
 					<span className="hidden min-[760px]:block">{props.text}&nbsp;</span>
@@ -25,10 +25,6 @@ const IconNText = (props: Props) => {
 			</div>
 		</div>
 	)
-}
-
-IconNText.defaultProps = {
-	isComment: false,
 }
 
 export default IconNText
