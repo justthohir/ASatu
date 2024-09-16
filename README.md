@@ -131,14 +131,18 @@ To accept contribution
 
 ## Progress Logs and Notes
 
-### 18-07-2024
+### 16-09-2024
 
-- setting database
-- install plugins [prisma, prisma-client, next-auth, bcrypt]
-- create model [user, post, vote, comment, contributor]
-- create api route
-- api just functionally, not yet modified with system needs
-- authentication not yet tested
+- fixing smaller components
+
+### 07-09-2024
+
+- breaking down to smaller components
+
+### 01-09-2024
+
+- Detail Post Layout
+- add package @tailwindcss/line-clamp
 
 ### 27-08-2024
 
@@ -147,14 +151,14 @@ To accept contribution
 - bottom nav (for mobile)
 - add package @svgr/webpack
 
-### 01-09-2024
+### 18-07-2024
 
-- Detail Post Layout
-- add package @tailwindcss/line-clamp
-
-### 07-09-2024
-
-- breaking down to smaller components
+- setting database
+- install plugins [prisma, prisma-client, next-auth, bcrypt]
+- create model [user, post, vote, comment, contributor]
+- create api route
+- api just functionally, not yet modified with system needs
+- authentication not yet tested
 
 ## Credit
 

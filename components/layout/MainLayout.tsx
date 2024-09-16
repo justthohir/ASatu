@@ -24,19 +24,24 @@ import NewBadge from "@components/utils/NewBadge"
 import IconNText from "@components/utils/IconNText"
 import RoundImage from "@components/utils/RoundImage"
 import ContentPost from "./ContentPost"
+import ModalContent from "./ModalContent"
+import ContentComment from "./ContentComment"
 
 type Props = {}
 
 const MainLayout = (props: Props) => {
 	return (
 		<>
+			<ModalContent />
 			<div className="base_cont m-auto">
 				<SideNav />
 				<main className="main_cont min-h-screen max-[823px]:mb-[60px]">
 					<div className="flex min-h-screen w-[425px] flex-col border-x border-solid border-light-border min-[760px]:w-[760px]">
 						<div className="main_header_cont flex h-[52px] w-full border-b border-solid border-light-border p-4 text-sm font-semibold">
 							<span className="mr-2 flex h-5 items-center">
-								<ArrowLeft width="18px" height="18px" />
+								<button>
+									<ArrowLeft width="18px" height="18px" />
+								</button>
 							</span>
 							<span className="flex h-5 items-center">
 								<p>Information</p>
@@ -53,124 +58,32 @@ const MainLayout = (props: Props) => {
 										disini, gak jalan sama sekali dari tadi. Ini aku lagi di
 										perempatan besar jemursari arah ke rungkut industri,
 										info dong yang lagi disekitar sini, macet kenapa nih?"
+									street="Jl. Jemursari"
+									city="SBY"
+									date="01/09/2024"
+									time="16:20"
 									countReply={2}
 								/>
 
-								<ContentPost
-									isComment={true}
+								<ContentComment
 									srcProfile={User2}
 									name="Jane Darsonoe"
 									userName="@janedoe"
-									postText="asli parah ini muacet total!!!, aku uda kejebak 1 jam,
-										posisiku di depan pabrik sampoerna."
-									countReply={1}
+									postText="asli parah ini muacet total!!!, aku uda kejebak 1 jam, posisiku di depan pabrik sampoerna."
+									date="01/09/2024"
+									time="16:25"
+									countReply={2}
 								/>
 
-								<ContentPost
-									isComment={true}
+								<ContentComment
 									srcProfile={User3}
 									name="Levi Luciana Fahreza"
 									userName="@lelufahreza"
-									postText="Waduh macet total ya, ada jalan alternatif lain yg deket
-										kah? aku biasanya ke rungkut lewat jemursari soalnya."
+									postText="Waduh macet total ya, ada jalan alternatif lain yg deket kah? aku biasanya ke rungkut lewat jemursari soalnya."
+									date="01/09/2024"
+									time="16:27"
 									countReply={0}
 								/>
-
-								{/* <div className="content_reply_cont mb-6 border-b border-solid border-light-border">
-									<HeaderContent
-										src={User2}
-										width={28}
-										heightCont={32}
-										name="Jane Darsonoe"
-										userName="@janedoe"
-										sizeName="text-xs"
-										sizeUserName="text-[10px]"
-									/>
-
-									<div className="post_main_cont mb-[14px] w-full rounded-2xl bg-[#F4F6F9] p-5">
-										<div className="mb-6 max-h-32 w-full overflow-hidden">
-											<p className="line-clamp-6 text-[13px] font-normal">
-												asli parah ini muacet total!!!, aku uda kejebak 1 jam,
-												posisiku di depan pabrik sampoerna.
-											</p>
-										</div>
-
-										<div className="flex w-full items-center justify-start space-x-2 text-primary-base">
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal">01/09/2024</span>
-											</span>
-											<span className="flex h-5 items-center">
-												<RoundSeparator />
-											</span>
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal text-[#6B7385]">
-													16:25 WIB
-												</span>
-											</span>
-										</div>
-									</div>
-
-									<div className="post_footer_cont mb-6 w-full">
-										<div className="flex max-h-[18px] w-full items-center justify-between">
-											<IconNText
-												sizeCont={18}
-												icon={<ReplyO width={18} height={18} />}
-												text="Reply"
-												count={2}
-												textColor="text-primary-base"
-												isComment={true}
-											/>
-										</div>
-									</div>
-								</div> */}
-
-								{/* <div className="content_reply_cont border-b border-solid border-light-border">
-									<HeaderContent
-										src={User3}
-										width={28}
-										heightCont={32}
-										name="Levi Luciana Fahreza"
-										userName="@lelufahreza"
-										sizeName="text-xs"
-										sizeUserName="text-[10px]"
-									/>
-
-									<div className="post_main_cont mb-[14px] w-full rounded-2xl bg-[#F4F6F9] p-5">
-										<div className="mb-6 max-h-32 w-full overflow-hidden">
-											<p className="line-clamp-6 text-[13px] font-normal">
-												Waduh macet total ya, ada jalan alternatif lain yg deket
-												kah? aku biasanya ke rungkut lewat jemursari soalnya.
-											</p>
-										</div>
-
-										<div className="flex w-full items-center justify-start space-x-2 text-primary-base">
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal">01/09/2024</span>
-											</span>
-											<span className="flex h-5 items-center">
-												<RoundSeparator />
-											</span>
-											<span className="flex h-5 items-center">
-												<span className="text-xs font-normal text-[#6B7385]">
-													16:27 WIB
-												</span>
-											</span>
-										</div>
-									</div>
-
-									<div className="post_footer_cont mb-6 w-full">
-										<div className="flex max-h-[18px] w-full items-center justify-between">
-											<IconNText
-												sizeCont={18}
-												icon={<ReplyO width={18} height={18} />}
-												text="Reply"
-												count={0}
-												textColor="text-primary-base"
-												isComment={true}
-											/>
-										</div>
-									</div>
-								</div> */}
 							</div>
 						</div>
 					</div>

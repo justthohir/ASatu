@@ -15,6 +15,7 @@ const config: Config = {
 			},
 			colors: {
 				"primary-base": "#2B2E44",
+				"primary-base-500": "#3A3E5C",
 				"light-border": "#E4E8EE",
 				"gray-base": "#6B7385",
 				"upvote-base": "#28CA42",

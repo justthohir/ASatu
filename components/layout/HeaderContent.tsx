@@ -30,12 +30,14 @@ const HeaderContent = (props: Props) => {
 						{props.name}
 					</span>
 					<span className={`${props.sizeUserName} font-medium text-gray-base`}>
-						{props.userName}
+						<a href="#">{props.userName}</a>
 					</span>
 				</div>
 			</div>
 			<div className="ph_menu_cont">
-				<DotMenu width="18px" height="18px" />
+				<button>
+					<DotMenu width="18px" height="18px" />
+				</button>
 			</div>
 		</div>
 	)

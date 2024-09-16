@@ -26,19 +26,27 @@ const SideNav = (props: Props) => {
 
 					<nav className="flex h-[294px] w-full flex-col items-center justify-around rounded-full border border-solid border-light-border">
 						<div>
-							<HomeBold width="24px" height="24px" />
+							<a href="#">
+								<HomeBold width="24px" height="24px" />
+							</a>
 						</div>
 						<div>
-							<SearchO width="24px" height="24px" />
+							<a href="#">
+								<SearchO width="24px" height="24px" />
+							</a>
 						</div>
 						<div>
-							<NotifO width="24px" height="24px" />
+							<a href="#">
+								<NotifO width="24px" height="24px" />
+							</a>
 						</div>
 						<div>
-							<LetterO width="24px" height="24px" />
+							<a href="#">
+								<LetterO width="24px" height="24px" />
+							</a>
 						</div>
 						<div className="group relative mb-[-10px] inline-block">
-							<button type="button">
+							<button>
 								<Image
 									src={Nginfo}
 									width="52"
